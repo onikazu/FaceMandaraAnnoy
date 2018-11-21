@@ -109,7 +109,7 @@ def recommend_faces(similar_paths_manager, frame_manager, face_rect_manager, sim
         # 距離測定(人数分)
         # 顔情報のベクトル化　類似配列の生成
         similar_paths_manager[:] = []
-        similar_distance_manager[:] = [] 
+        similar_distance_manager[:] = []
         D = []
         for i in range(len(dsts)):
             try:
@@ -148,7 +148,7 @@ if __name__ == '__main__':
         # プロセスの開始
         recommend_process.start()
         start_time = time.time()
-        cap = cv2.VideoCapture(0)  # 引数はカメラのデバイス番号
+        cap = cv2.VideoCapture("nvcamerasrc ! video/x-raw(memory:NVMM), width=(int)368, height=(int)368,format=(string)I420, framerate=(fraction)30/1 ! nvvidconv flip-method=0 ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink")  # 引数はカメラのデバイス番号
 
         # cap.set(6,cv2.VideoWriter_fourcc(*'MJPG')) # 対応していない模様
         # パラメータを最大以上に上げてしまうとバグが発生する
