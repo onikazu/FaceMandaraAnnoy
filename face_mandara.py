@@ -119,7 +119,7 @@ def recommend_faces(similar_paths_manager, frame_manager, face_rect_manager, sim
                 continue
 
             target_vector = np.array(list(target_image_encoded)).astype("float32")
-            target_vector.resize((1, 128))
+            target_vector.resize((128, 1))
 
             similar_paths = []
             similar_distances = []
