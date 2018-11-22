@@ -38,7 +38,8 @@ face_vectors = np.array(face_vectors).astype("float32")
 
 # annoy
 from annoy import AnnoyIndex
-
+print("shape1", face_vectors.shape[1])
+print("shape0", face_vectors.shape[0])
 t = AnnoyIndex(face_vectors.shape[1])
 for i, v in enumerate(face_vectors):
     t.add_item(i, v)
