@@ -223,7 +223,7 @@ if __name__ == '__main__':
                     distance_no3 = distance[0][2]
                     distance_worst = distance[0][-1]
                 except:
-                    pass
+                    distance_no1 = 1
 
             # インスタンス作成
             # similar_windows = 二重リスト
