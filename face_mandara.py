@@ -148,7 +148,7 @@ if __name__ == '__main__':
         # プロセスの開始
         recommend_process.start()
         start_time = time.time()
-        cap = cv2.VideoCapture(cv2.CAP_GSTREAMER)  # 引数はカメラのデバイス番号
+        cap = cv2.VideoCapture("nvcamerasrc ! video/x-raw(memory:NVMM), width=(int)368, height=(int)368,format=(string)I420, framerate=(fraction)30/1 ! nvvidconv flip-method=0 ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink", cv2.CAP_GSTREAMER)  # 引数はカメラのデバイス番号
 
         # cap.set(6,cv2.VideoWriter_fourcc(*'MJPG')) # 対応していない模様
         # パラメータを最大以上に上げてしまうとバグが発生する
