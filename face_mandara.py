@@ -151,7 +151,7 @@ if __name__ == '__main__':
         cap = cv2.VideoCapture('v4l2src device=/dev/video{} ! '
                'video/x-raw, width=(int){}, height=(int){}, '
                'format=(string)RGB ! '
-               'videoconvert ! appsink').format(0, 128, 128), cv2.CAP_GSTREAMER)  # 引数はカメラのデバイス番号
+               'videoconvert ! appsink'.format(0, 128, 128), cv2.CAP_GSTREAMER)  # 引数はカメラのデバイス番号
 
         # cap.set(6,cv2.VideoWriter_fourcc(*'MJPG')) # 対応していない模様
         # パラメータを最大以上に上げてしまうとバグが発生する
